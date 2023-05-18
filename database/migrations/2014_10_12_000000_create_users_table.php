@@ -13,16 +13,18 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('last_name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->integer('tipo_doc');
-            $table->string('nro_documento');
-            $table->string('domicilio');
-            $table->string('telefono');
+            $table->string('nombreUsuario',50);
+            $table->string('password',100);
+            $table->string('numeroDocumento',30)->unique();
+            $table->integer('idPersona');
+            $table->integer('idPerfil');
+            $table->char('tipoUsuario');
+            $table->integer('bitEstado');
+            $table->integer('usuCrea')->nullable();
+            $table->integer('usuMod')->nullable();
             $table->timestamps();
         });
+
     }
 
     /**

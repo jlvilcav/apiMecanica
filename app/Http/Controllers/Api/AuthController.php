@@ -28,22 +28,24 @@ class AuthController extends Controller
     public function register(Request $request){
         //validacion de lo datos
         $request->validate([
-            'name'=>'required',
-            'email'=>'required|email|unique:users',
+            'nombreUsuario'=>'required',
+            'numeroDocumento'=>'required|unique:users',
             'password'=>'required|confirmed',
-            'tipo_doc'=>'required',
-            'nro_documento'=>'required'
+            // 'idPersona'=>'required',
+            // 'idPerfil'=>'required',
+            'tipoUsuario'=>'required'
         ]);
         //alta de usuarios
         $user = new User();
-        $user->name = $request->name;
-        $user->last_name = $request->last_name;
-        $user->email = $request->email;
+        $user->nombreUsuario = $request->nombreUsuario;
+        $user->numeroDocumento = $request->numeroDocumento;
         $user->password = Hash::make($request->password);
-        $user->tipo_doc = $request->tipo_doc;
-        $user->nro_documento = $request->nro_documento;
-        $user->domicilio = $request->domicilio;
-        $user->telefono = $request->telefono;
+        $user->idPersona = $request->idPersona;
+        $user->idPerfil = $request->idPerfil;
+        $user->tipoUsuario = $request->tipoUsuario;
+        $user->bitEstado = 1;
+        $user->usuCrea = $request->usuCrea;
+        $user->usuMod = $request->usuMod;
         $user->save();
 
         $token = JWTAuth::fromUser($user);
@@ -56,7 +58,7 @@ class AuthController extends Controller
 
     public function login(LoginRequest $request){
 
-        $credenciales = $request->only('email', 'password');
+        $credenciales = $request->only('numeroDocumento', 'password');
 
         try {
             if (!$token = JWTAuth::attempt($credenciales)) {

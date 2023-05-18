@@ -20,9 +20,9 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::table('perfil', function (Blueprint $table) {
-            $table->renameColumn('id', 'idPerfil');
-        });
+        // Schema::table('perfil', function (Blueprint $table) {
+        //     $table->renameColumn('id', 'idPerfil');
+        // });
     }
 
     /**

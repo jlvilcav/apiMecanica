@@ -25,9 +25,9 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::table('empleado', function (Blueprint $table) {
-            $table->renameColumn('id', 'idEmpleado');
-        });
+        // Schema::table('empleado', function (Blueprint $table) {
+        //     $table->renameColumn('id', 'idEmpleado');
+        // });
     }
 
     /**

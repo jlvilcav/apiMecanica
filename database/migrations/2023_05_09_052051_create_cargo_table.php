@@ -20,9 +20,9 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::table('cargo', function (Blueprint $table) {
-            $table->renameColumn('id', 'idCargo');
-        });
+        // Schema::table('cargo', function (Blueprint $table) {
+        //     $table->renameColumn('id', 'idCargo');
+        // });
     }
 
     /**
