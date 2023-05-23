@@ -14,6 +14,7 @@ class Perfil extends Model
      *
      * @var array<int, string>
      */
+    protected $table = 'perfil';
     protected $fillable = [
         'nombrePerfil',
         'bitEstado',

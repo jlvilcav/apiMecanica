@@ -14,6 +14,7 @@ class Cargo extends Model
      *
      * @var array<int, string>
      */
+    protected $table = 'cargo';
     protected $fillable = [
         'nombreCargo',
         'bitEstado',

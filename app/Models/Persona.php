@@ -13,6 +13,7 @@ class Persona extends Model
      *
      * @var array<int, string>
      */
+    protected $table = 'persona';
     protected $fillable = [
         'apPaterno',
         'apMaterno',
@@ -22,6 +23,7 @@ class Persona extends Model
         'direccion',
         'telefonoUno',
         'telefonoDos',
+        'correo',
         'bitEstado',
         'usuCrea',
         'usuMod'
