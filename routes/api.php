@@ -8,6 +8,8 @@ use App\Http\Controllers\Api\Seguridad\EmpleadoController;
 use App\Http\Controllers\Producto\MarcaProductoController;
 use App\Http\Controllers\Producto\CategoriaProductoController;
 use App\Http\Controllers\Producto\MedidaProductoController;
+use App\Http\Controllers\Producto\ModeloProductoController;
+use App\Http\Controllers\Producto\ProductoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +41,10 @@ Route::group(['middleware' => ['jwt.verify']], function(){
     Route::post('registerCategoriaProducto', [CategoriaProductoController::class, 'registerCategoriaProducto']);
 
     Route::post('registerMedidaProducto',[MedidaProductoController::class, 'registerMedidaProducto']);
+
+    Route::post('registerModeloProducto',[ModeloProductoController::class, 'registerModeloProducto']);
+
+    Route::post('registerProducto',[ProductoController::class, 'registerProducto']);
 });
 
 Route::get('users', [AuthController::class, 'allUsers']);
