@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('medidaproducto', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('idMedidaProducto');
+            $table->string('nombreMedidaProducto', 100);
+            $table->integer('bitEstado');
+            $table->integer('usuCrea')->nullable();
+            $table->integer('usuMod')->nullable();
             $table->timestamps();
         });
     }

@@ -20,8 +20,8 @@ return new class extends Migration
             $table->decimal('sueldo', $precision = 8, $scale = 2);
             $table->string('rutaContrato', 100);
             $table->integer('bitEstado');
-            $table->integer('usuCrea');
-            $table->integer('usuMod');
+            $table->integer('usuCrea')->nullable();
+            $table->integer('usuMod')->nullable();
             $table->timestamps();
         });
 

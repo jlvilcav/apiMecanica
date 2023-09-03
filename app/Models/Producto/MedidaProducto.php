@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class MedidaProducto extends Model
 {
     use HasFactory;
+
+    protected $table = 'medidaproducto';
+    protected $fillable = [
+        'nombreMedidaProducto',
+        'bitEstado',
+        'usuCrea',
+        'usuMod'
+    ];
 }

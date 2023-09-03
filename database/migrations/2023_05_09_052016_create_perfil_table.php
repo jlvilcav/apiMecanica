@@ -15,8 +15,8 @@ return new class extends Migration
             $table->bigIncrements('idPerfil');
             $table->string('nombrePerfil', 50);
             $table->integer('bitEstado');
-            $table->integer('usuCrea');
-            $table->integer('usuMod');
+            $table->integer('usuCrea')->nullable();
+            $table->integer('usuMod')->nullable();
             $table->timestamps();
         });
 

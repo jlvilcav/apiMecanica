@@ -15,14 +15,10 @@ return new class extends Migration
             $table->bigIncrements('idCargo');
             $table->string('nombreCargo', 50);
             $table->integer('bitEstado');
-            $table->integer('usuCrea');
-            $table->integer('usuMod');
+            $table->integer('usuCrea')->nullable();
+            $table->integer('usuMod')->nullable();
             $table->timestamps();
         });
-
-        // Schema::table('cargo', function (Blueprint $table) {
-        //     $table->renameColumn('id', 'idCargo');
-        // });
     }
 
     /**
