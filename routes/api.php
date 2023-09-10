@@ -11,6 +11,7 @@ use App\Http\Controllers\Producto\MedidaProductoController;
 use App\Http\Controllers\Producto\ModeloProductoController;
 use App\Http\Controllers\Producto\ProductoController;
 use App\Http\Controllers\Servicio\CategoriaServicioController;
+use App\Http\Controllers\Servicio\ServicioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +51,8 @@ Route::group(['middleware' => ['jwt.verify']], function(){
 
     //Servicio
     Route::post('registerCategoriaServicio',[CategoriaServicioController::class, 'registerCategoriaServicio']);
+
+    Route::post('registerServicio',[ServicioController::class, 'registerServicio']);
 });
 
 Route::get('users', [AuthController::class, 'allUsers']);
