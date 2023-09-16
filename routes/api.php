@@ -15,6 +15,7 @@ use App\Http\Controllers\Servicio\ServicioController;
 use App\Http\Controllers\Vehiculos\TipoVehiculoController;
 use App\Http\Controllers\Vehiculos\MarcaVehiculoController;
 use App\Http\Controllers\Vehiculos\ModeloVehiculoController;
+use App\Http\Controllers\Vehiculos\VehiculosController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -63,6 +64,8 @@ Route::group(['middleware' => ['jwt.verify']], function(){
     Route::post('registerMarcaVehiculo',[MarcaVehiculoController::class, 'registerMarcaVehiculo']);
 
     Route::post('registerModeloVehiculo',[ModeloVehiculoController::class, 'registerModeloVehiculo']);
+
+    Route::post('registerVehiculos',[VehiculosController::class, 'registerVehiculos']);
 
 });
 
